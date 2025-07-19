@@ -31,22 +31,28 @@ Fitur utama dari API ini mencakup:
 git clone https://github.com/rezasayuti/api-sembalun.git
 cd api-sembalun
 
+---
+
 ### 2. Install Dependencies
 
 composer install
 composer require tymon/jwt-auth
+
+---
 
 ### 3. Setup JWT Authentication
 
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 php artisan jwt:secret
 
+---
+
 ### 4. Konfigurasi File .env
 
 cp .env.example .env
 php artisan key:generate
 
-    Sesuaikan konfigurasi database di .env:
+Sesuaikan konfigurasi database di .env:
 
 DB_CONNECTION=mysql  
 DB_HOST=127.0.0.1  
@@ -55,10 +61,14 @@ DB_DATABASE=sembalun_db
 DB_USERNAME=root  
 DB_PASSWORD=
 
+---
+
 ### 5. Setup Database
 
 php artisan migrate
 php artisan db:seed
+
+---
 
 ### 6. Jalankan Server
 
@@ -77,6 +87,8 @@ Pengunjung
     Email: user@example.com
 
     Password: password
+
+---
 
 ### Dokumentasi API
 
@@ -110,6 +122,8 @@ Kunjungan
 
     Semua endpoint (kecuali register/login) memerlukan Authorization Header:
     Authorization: Bearer <token>
+
+---
 
 ### Contoh Request (POST /kunjungan)
 
