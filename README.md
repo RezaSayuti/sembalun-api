@@ -28,27 +28,25 @@ Fitur utama dari API ini mencakup:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/rezasayuti/api-sembalun.git
-cd api-sembalun
-
----
+git clone https://github.com/rezasayuti/sembalun-api.git
+cd sembalun-api
+```
 
 ### 2. Install Dependencies
-
+```bash
 composer install
 composer require tymon/jwt-auth
-
----
+```
 
 ### 3. Setup JWT Authentication
-
+```bash
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 php artisan jwt:secret
+```
 
----
 
 ### 4. Konfigurasi File .env
-
+```bash
 cp .env.example .env
 php artisan key:generate
 
@@ -60,18 +58,16 @@ DB_PORT=3306
 DB_DATABASE=sembalun_db  
 DB_USERNAME=root  
 DB_PASSWORD=
-
----
+```
 
 ### 5. Setup Database
-
+```bash
 php artisan migrate
 php artisan db:seed
-
----
+```
 
 ### 6. Jalankan Server
-
+```bash
 php artisan serve
 
 Akses API melalui: http://localhost:8000
@@ -88,20 +84,18 @@ Pengunjung
 
     Password: password
 
----
-
+```
 ### Dokumentasi API
-
-📎 Link ke Dokumentasi Postman
+📎 [Link](https://web.postman.co/workspace/My-Workspace~853f9888-2645-4ab8-8e52-b4afc85c24d0/collection/39869894-0b179bd9-84ff-4dba-adc9-08658384ec3c?action=share&source=copy-link&creator=39869894) ke Dokumentasi Postman
 Daftar Endpoint (Base URL: http://localhost:8000/api)
 Autentikasi
-
+```bash
     POST /register – Registrasi pengguna baru
 
     POST /login – Login dan menerima token JWT
-
+```
 Pengunjung
-
+```bash
     GET /pengunjung – Ambil semua data pengunjung
 
     POST /pengunjung – Tambah pengunjung
@@ -109,9 +103,9 @@ Pengunjung
     PUT /pengunjung/{id} – Edit pengunjung
 
     DELETE /pengunjung/{id} – Hapus pengunjung
-
+```
 Kunjungan
-
+```bash
     GET /kunjungan – Ambil semua kunjungan
 
     POST /kunjungan – Catat kunjungan
@@ -122,27 +116,25 @@ Kunjungan
 
     Semua endpoint (kecuali register/login) memerlukan Authorization Header:
     Authorization: Bearer <token>
-
+```
 ---
 
 ### Contoh Request (POST /kunjungan)
 
 Header:
-
+```bash
 Authorization: Bearer <token JWT>
 Content-Type: application/json
-
+```
 Body:
-
+```bash
 {
   "pengunjung_id": 1,
   "tanggal_kunjungan": "2025-07-19",
   "tujuan": "Bukit Selong"
 }
-
+```
+---
 License
 
 Sistem ini dibangun menggunakan Laravel dan dilisensikan di bawah MIT License.
-
-
-Jika kamu mau saya bantu buatkan **struktur folder Laravel + isi file README.md langsung dalam proyek** (ZIP)
