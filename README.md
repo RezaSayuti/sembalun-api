@@ -49,9 +49,9 @@ php artisan jwt:secret
 ```bash
 cp .env.example .env
 php artisan key:generate
-
+```
 Sesuaikan konfigurasi database di .env:
-
+```bash
 DB_CONNECTION=mysql  
 DB_HOST=127.0.0.1  
 DB_PORT=3306  
