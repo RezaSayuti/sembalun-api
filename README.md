@@ -69,21 +69,38 @@ php artisan db:seed
 ### 6. Jalankan Server
 ```bash
 php artisan serve
-
+```
 Akses API melalui: http://localhost:8000
-Akun Uji Coba
-Admin
 
-    Email: admin@example.com
+Untuk menggunakan API, silakan lakukan registrasi terlebih dahulu melalui endpoint:
+```URL
+POST http://localhost:8000/api/register
+```
 
-    Password: password
+Contoh body JSON untuk registrasi:
+```json
+{
+  "name": "admin",
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+```
 
-Pengunjung
+Setelah berhasil registrasi, login melalui endpoint:
+```URL
+POST http://localhost:8000/api/login
+```
 
-    Email: user@example.com
-
-    Password: password
-
+Contoh body JSON untuk login:
+```json
+{
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+```
+Setelah login, Anda akan menerima token yang dapat digunakan untuk mengakses endpoint lainnya menggunakan header:
+```css
+Authorization: Bearer {token}
 ```
 ### Dokumentasi API
 📎 [Link](https://web.postman.co/workspace/My-Workspace~853f9888-2645-4ab8-8e52-b4afc85c24d0/collection/39869894-0b179bd9-84ff-4dba-adc9-08658384ec3c?action=share&source=copy-link&creator=39869894) ke Dokumentasi Postman
